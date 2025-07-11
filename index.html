@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeal Education - Chinese Language Learning & Cultural Immersion</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <meta name="description" content="Discover authentic Chinese language learning and cultural immersion experiences with Zeal Education. Professional educational tours and programs for students, institutions, and corporate clients in Singapore." />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fzealeduca8453back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary font-sans">
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-accent-50">
+        <div class="text-center p-8 max-w-md mx-auto">
+            <div class="mb-8">
+                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-primary-medium">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                    </svg>
+                </div>
+                <h1 class="font-heading font-bold text-fluid-3xl text-secondary mb-2">Zeal Education</h1>
+                <p class="text-fluid-base text-text-secondary font-medium">Chinese Language Learning & Cultural Immersion</p>
+            </div>
+            
+            <div class="bg-white rounded-standard shadow-medium p-6 mb-6">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                </div>
+                <p class="text-text-secondary font-caption">Loading your educational journey...</p>
+            </div>
+            
+            <div class="space-y-2 text-sm text-text-secondary font-caption">
+                <p>Redirecting to homepage</p>
+                <p class="text-xs">If you're not redirected automatically, <a href="pages/homepage.html" class="text-primary hover:text-primary-600 underline transition-smooth">click here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page redirect functionality
+        const pages = [
+            'homepage.html',
+            'company_philosophy.html', 
+            'programs_overview.html',
+            'program_detail.html',
+            'contact.html',
+            'partners.html'
+        ];
+
+        // Function to redirect to a specific page
+        function redirectToPage(pageName) {
+            if (pages.includes(pageName)) {
+                window.location.href = `pages/${pageName}`;
+            } else {
+                console.error(`Page ${pageName} not found in available pages`);
+                // Default redirect to homepage
+                window.location.href = 'pages/homepage.html';
+            }
+        }
+
+        // Auto-redirect to homepage after 3 seconds
+        setTimeout(() => {
+            redirectToPage('homepage.html');
+        }, 3000);
+
+        // Check for URL parameters to redirect to specific page
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetPage = urlParams.get('page');
+        
+        if (targetPage) {
+            setTimeout(() => {
+                redirectToPage(targetPage);
+            }, 1000);
+        }
+
+        // Preload critical pages for better performance
+        pages.forEach(page => {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = `pages/${page}`;
+            document.head.appendChild(link);
+        });
+    </script>
+<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+</body>
+</html>
